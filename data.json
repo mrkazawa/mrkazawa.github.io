@@ -1,0 +1,45 @@
+{
+  "profile": {
+    "name": "Dr. John Doe",
+    "academicBackground": [
+      "PhD in Statistics, University of Statistics, 2015.",
+      "MSc in Applied Mathematics, University of Mathematics, 2010.",
+      "BSc in Mathematics, University of Science, 2008."
+    ],
+    "office": {
+      "department": "Department of Statistics",
+      "faculty": "Faculty of Science",
+      "university": "University of Statistics",
+      "address": "123 University Ave, City, Country"
+    },
+    "interests": "Blockchain, Information Security, Enterprise System",
+    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=YOUR_SCOPUS_ID",
+    "googleScholar": "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID",
+    "sinta": "https://sinta.kemdikbud.go.id/authors/profile/YOUR_SINTA_ID",
+    "orcid": "https://orcid.org/YOUR_ORCID_ID"
+  },
+  "publications": [
+    "J. Smith, \"Advanced Statistical Methods,\" Journal of Statistics, vol. 45, no. 2, pp. 123-145, 2023.",
+    "J. Doe, \"Data Visualization Techniques,\" International Journal of Data Science, vol. 12, no. 4, pp. 89-102, 2022."
+  ],
+  "communityActivities": [
+    "Member of the University Curriculum Committee (2021–Present).",
+    "Volunteer at the Annual Statistics Outreach Program."
+  ],
+  "contact": {
+    "email": "john.doe@university.edu",
+    "labs": "https://telulabs.github.io"
+  },
+  "courses": [
+    {
+      "name": "Statistics 101",
+      "semester": "Fall 2022",
+      "description": "Introduction to basic statistics."
+    },
+    {
+      "name": "Data Analysis",
+      "semester": "Spring 2023",
+      "description": "Advanced data analysis techniques."
+    }
+  ]
+}
