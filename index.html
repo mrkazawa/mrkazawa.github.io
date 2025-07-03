@@ -299,7 +299,12 @@
     </footer>
     <script>
       fetch("data.json")
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
         .then((data) => {
           // Header information
           document.getElementById("header-name").textContent =
@@ -430,6 +435,17 @@
 
           const labsLink = document.getElementById("labs-link");
           labsLink.href = data.contact.labs;
+        })
+        .catch((error) => {
+          console.error("Error loading data.json:", error);
+          // Fallback content
+          document.getElementById("header-name").textContent =
+            "Professor Portfolio";
+          document.getElementById("header-title").textContent = "Loading...";
+          document.getElementById("profile-name").textContent =
+            "Loading content...";
+          document.getElementById("profile-title").textContent =
+            "Please check console for errors";
         });
     </script>
   </body>
