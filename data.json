@@ -1,112 +1,105 @@
 {
   "profile": {
-    "name": "Dr. John Doe",
-    "title": "Associate Professor",
-    "bio": "Dr. John Doe is an Associate Professor specializing in data science, blockchain technology, and information security. He has over 10 years of experience in academia and industry, with a passion for innovative research and quality education.",
+    "name": "Yustus Eko Oktian, Ph.D",
+    "title": "Assistant Professor",
+    "bio": "Yustus Eko Oktian, Ph.D is an Assistant Professor specializing in information security, blockchain technology, and software engineering. He has over 10 years of experience in academia and industry, with a passion for innovative research and quality education.",
     "academicBackground": [
-      "PhD in Computer Science, Massachusetts Institute of Technology, 2015.",
-      "MSc in Applied Mathematics, Stanford University, 2010.",
-      "BSc in Mathematics, University of California Berkeley, 2008."
+      "PhD in Computer Engineering, Dongseo University, 2021.",
+      "MSc in Computer Engineering, Dongseo University, 2016.",
+      "ST in Electical Engineering, Petra Christian University, 2013."
     ],
     "office": {
-      "department": "Department of Computer Science",
-      "faculty": "Faculty of Engineering and Technology",
-      "university": "University of Technology",
-      "address": "Room 315, Building A, 123 University Ave, Tech City, TC 12345"
+      "department": "Department of Information Systems",
+      "faculty": "School of Information Technology",
+      "university": "Universitas Ciputra",
+      "address": "CitraLand CBD Boulevard, Made, Kec. Sambikerep, Surabaya, Jawa Timur 60219, Indonesia"
     },
-    "interests": "Blockchain Technology, Information Security, Enterprise Systems, Data Science, Machine Learning",
-    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=57200000000",
-    "googleScholar": "https://scholar.google.com/citations?user=ABCD1234567",
-    "sinta": "https://sinta.kemdikbud.go.id/authors/profile/6000000",
-    "orcid": "https://orcid.org/0000-0000-0000-0000",
-    "linkedin": "https://www.linkedin.com/in/johndoe-professor"
+    "interests": "Information Security, Blockchain Technology, Software Engineering",
+    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=56465933800",
+    "googleScholar": "https://scholar.google.com/citations?hl=en&user=3VLQx40AAAAJ",
+    "sinta": "https://sinta.kemdikbud.go.id/authors/profile/6109507",
+    "orcid": "https://orcid.org/0000-0002-3574-7820",
+    "linkedin": "https://www.linkedin.com/in/yustus-eko-oktian-242023351/"
   },
   "projects": [
     {
-      "title": "Blockchain-based Voting System",
-      "description": "Developed a secure and transparent voting system using blockchain technology to ensure election integrity.",
-      "year": "2024",
-      "status": "Completed",
-      "collaborators": "Dr. Jane Smith, Alex Johnson",
-      "funding": "NSF Grant #1234567 - $150,000"
+      "title": "E-Governance Blockchain System",
+      "description": "This research examines the inefficiencies in governmental systems caused by fragmented data and manual processes. It proposes the use of smart contracts as a unified, automated, and transparent mechanism for executing public sector functions. By embedding rules and workflows into code, smart contracts enable secure, verifiable, and auditable operations—offering a scalable solution for streamlining governance and enhancing accountability.",
+      "year": "2024-Now"
     },
     {
-      "title": "AI-Powered Cybersecurity Framework",
-      "description": "Research project focusing on machine learning algorithms for real-time threat detection in enterprise networks.",
-      "year": "2023-2025",
-      "status": "Ongoing",
-      "collaborators": "Dr. Michael Chen, Sarah Williams",
-      "funding": "Industry Partnership - $200,000"
+      "title": "IoT Blockchain Security Framework",
+      "description": "This research addresses the security vulnerabilities of Internet of Things (IoT) ecosystems by proposing blockchain-based solutions that align with the inherently decentralized nature of IoT networks. By leveraging decentralized ledger technologies, the study enhances trust, transparency, and resilience across IoT systems. It presents a comprehensive framework covering device authentication and authorization, secure software updates, data integrity assurance, and efficient data management. The research also evaluates and designs blockchain architectures optimized for IoT, aiming to ensure secure and scalable operations in distributed environments.",
+      "year": "2020-Now"
     },
     {
-      "title": "Smart Contract Security Analysis Tool",
-      "description": "Development of automated tools for identifying vulnerabilities in smart contracts deployed on Ethereum.",
-      "year": "2023",
-      "status": "Completed",
-      "collaborators": "Research Team Alpha",
-      "funding": "University Research Grant - $75,000"
+      "title": "Secure and Fair AI Platform",
+      "description": "This research aims to develop a secure and equitable Artificial Intelligence (AI) environment by addressing the limitations of traditional centralized AI architectures, where user data privacy is often compromised. By integrating Federated Learning and blockchain technology, the study proposes a decentralized AI framework that enhances data security, ensures user autonomy, and promotes fairness in model training and deployment. This approach enables collaborative model development without exposing raw user data, while leveraging blockchain to ensure transparency, auditability, and trust in the system.",
+      "year": "2020-Now"
+    },
+    {
+      "title": "Secure Software Define Network",
+      "description": "This research focuses on the design and implementation of a secure Software-Defined Networking (SDN) framework aimed at enhancing network security within enterprise environments. The project spans multiple key areas, including the development of SDN security applications, the design of robust security protocols for both East-West and Northbound interfaces, and the creation of secure bandwidth trading and real-time pricing management applications. The framework is designed to address dynamic security challenges and promote adaptive, policy-driven control across network layers.",
+      "year": "2014-2022"
     }
   ],
   "publications": [
-    "J. Doe, A. Smith, \"Blockchain Security in Enterprise Applications,\" IEEE Transactions on Information Forensics and Security, vol. 18, pp. 1234-1245, 2024.",
-    "J. Doe, M. Chen, \"Machine Learning Approaches for Cybersecurity Threat Detection,\" ACM Computing Surveys, vol. 56, no. 3, pp. 1-28, 2024.",
-    "J. Doe, \"Smart Contract Vulnerability Assessment: A Systematic Review,\" Journal of Systems and Software, vol. 198, pp. 111-125, 2023.",
-    "J. Doe, S. Williams, \"Decentralized Identity Management Using Blockchain,\" Computers & Security, vol. 125, pp. 103-115, 2023.",
-    "J. Doe, \"Advanced Statistical Methods for Cybersecurity Data Analysis,\" Journal of Statistics, vol. 45, no. 2, pp. 123-145, 2022."
+    "Y. E. Oktian, K. P. Hilton, and Christian, \"Transforming Digital Identity through Smart Contract as Identity,\" in Proc. 2024 2nd Int. Conf. on Technology Innovation and Its Applications (ICTIIA), Medan, Indonesia, Sep. 2024, pp. 1–6.",
+    "Y. E. Oktian, T.-T.-H. Le, U. Jo, A. M. A. Laksmono, and H. Kim, \"Secure decentralized firmware update delivery service for Internet of Things,\" Internet of Things, vol. 26, p. 101136, Jul. 2024.",
+    "Y. E. Oktian, U. Jo, S. Oh, H. Jeong, J. Kim, T.-T.-H. Le, and H. Kim, \"Patchman: Firmware Update Delivery Service Over the Blockchain for IoT Environment,\" in Proc. Int. Conf. on Information Security Applications, Singapore: Springer Nature, Aug. 2023, pp. 131–142.",
+    "Y. E. Oktian and S.-G. Lee, \"Blockchain-based federated learning system: A survey on design choices,\" Sensors, vol. 23, no. 12, p. 5658, Jun. 2023.",
+    "Y. E. Oktian, T.-T.-H. Le, U. Jo, and H. Kim, \"Blockchain-powered bandwidth trading on SDN-enabled edge network,\" IEEE Access, vol. 10, pp. 114024–114039, Oct. 2022."
   ],
   "communityActivities": [
-    "Program Committee Member, International Conference on Blockchain Security (2023-Present)",
-    "Reviewer for IEEE Transactions on Information Forensics and Security (2021-Present)",
-    "Member of the University Curriculum Committee (2021–Present)",
-    "Co-organizer of Annual Cybersecurity Workshop (2022-Present)",
-    "Volunteer at the Annual Technology Outreach Program for High Schools"
+    "Reviewer for IEEE Access (2021)",
+    "Reviewer for SN Applied Sciences (2021)"
   ],
   "contact": {
-    "email": "john.doe@university.edu",
-    "phone": "+1 (555) 123-4567",
-    "labs": "https://telulabs.github.io",
-    "office_hours": "Tuesdays and Thursdays, 2:00 PM - 4:00 PM"
+    "email": "yustus.oktian@ciputra.ac.id",
+    "phone": "+6231-745-1699",
+    "labs": "Data Science and Artificial Intelligence Research Center (DSAIRC)",
+    "office_hours": "Monday - Friday, 8:00 AM - 4:00 PM (GMT+7)"
   },
   "courses": [
     {
-      "name": "CS 401: Blockchain Technology and Applications",
-      "semester": "Fall 2024",
-      "description": "Comprehensive course covering blockchain fundamentals, smart contracts, and real-world applications.",
+      "name": "Web Design and Development",
+      "semester": "Spring 2025",
+      "description": "Comprehensive course on web design and development covering HTML, CSS, JavaScript, PHP, and the Laravel framework to build dynamic and responsive web applications.",
+      "credits": 6
+    },
+    {
+      "name": "Business Data Communication",
+      "semester": "Spring 2025",
+      "description": "A foundational course in computer networking that explores the OSI model, network protocols, and hands-on configuration using Cisco Packet Tracer and MikroTik routers.",
       "credits": 3
     },
     {
-      "name": "CS 350: Information Security",
-      "semester": "Spring 2024",
-      "description": "Advanced course on cybersecurity principles, threat analysis, and defense mechanisms.",
+      "name": "Microservices Development",
+      "semester": "Spring 2025",
+      "description": "A practical course on microservices architecture focusing on virtualization and containerization using Virtual Machines, Vagrant, Docker Desktop, and Docker Swarm for scalable application deployment.",
       "credits": 3
     },
     {
-      "name": "CS 201: Data Structures and Algorithms",
-      "semester": "Fall 2023",
-      "description": "Fundamental course covering essential data structures and algorithm design principles.",
+      "name": "Cyber Security",
+      "semester": "Spring 2025",
+      "description": "A comprehensive course on cybersecurity covering IT threats and vulnerabilities, cryptographic principles, AAA (Authentication, Authorization, Accounting), and ethical hacking techniques to secure digital systems.",
       "credits": 4
-    },
-    {
-      "name": "CS 480: Special Topics in Cybersecurity",
-      "semester": "Spring 2023",
-      "description": "Graduate-level seminar exploring cutting-edge research in cybersecurity.",
-      "credits": 3
     }
   ],
   "awards": [
     {
-      "title": "Excellence in Teaching Award",
-      "organization": "University of Technology",
-      "year": "2023"
-    },
-    {
-      "title": "Best Paper Award",
-      "organization": "International Conference on Blockchain Security",
+      "title": "Best Lecture in Teaching-Learning Innovation",
+      "organization": "Ciputra University",
       "year": "2024"
     },
     {
-      "title": "Outstanding Researcher Award",
-      "organization": "Faculty of Engineering and Technology",
+      "title": "Best Paper Award",
+      "organization": "International Conference on Platform Technology and Service",
+      "year": "2022"
+    },
+    {
+      "title": "Outstanding Reviewer Award",
+      "organization": "MDPI Journal - Future Internet",
       "year": "2022"
     }
   ]
