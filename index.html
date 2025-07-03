@@ -4,196 +4,429 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lecturer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-      }
-      header {
-        background: #004080;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-      }
-      nav {
-        background: #f4f4f4;
-        padding: 10px;
-        text-align: center;
-      }
-      nav a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: #004080;
-      }
-      section {
-        padding: 20px;
-      }
-      footer {
-        background: #004080;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      table,
-      th,
-      td {
-        border: 1px solid #ddd;
-      }
-      th,
-      td {
-        padding: 10px;
-        text-align: left;
-      }
-      .photo-placeholder {
-        width: 150px;
-        height: 150px;
-        background-color: #ccc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #666;
-        font-size: 14px;
-        border: 1px solid #999;
-      }
-      .profile-links a {
-        display: block;
-        margin: 5px 0;
-        color: #004080;
-      }
-    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "academic-blue": "#004080",
+              "academic-light": "#0066cc",
+            },
+          },
+        },
+      };
+
+      // Add smooth scrolling
+      document.documentElement.style.scrollBehavior = "smooth";
+    </script>
   </head>
-  <body>
-    <header>
-      <h1>Lecturer Portfolio</h1>
-    </header>
-    <nav>
-      <a href="#profile">Profile</a>
-      <a href="#courses">Courses Instructed</a>
-      <a href="#publications">Publications</a>
-      <a href="#community">Community Activities</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <section id="profile">
-      <h2>Profile</h2>
-      <div class="photo-placeholder">Your Photo Here</div>
-      <p><strong>Name:</strong> <span id="profile-name"></span></p>
-      <p><strong>Office:</strong> <span id="office-info"></span></p>
-      <p><strong>Academic Background:</strong></p>
-      <ul id="academic-background"></ul>
-      <p><strong>Interest:</strong> <span id="interests"></span></p>
-    </section>
-    <section id="research">
-      <h2>Research Profile</h2>
-      <div class="profile-links">
-        <a id="scopus-link" target="_blank"
-          ><i class="fas fa-search"></i> Scopus Profile</a
-        >
-        <a id="google-scholar-link" target="_blank"
-          ><i class="fas fa-graduation-cap"></i> Google Scholar Profile</a
-        >
-        <a id="sinta-link" target="_blank"
-          ><i class="fas fa-university"></i> SINTA Profile</a
-        >
-        <a id="orcid-link" target="_blank"
-          ><i class="fas fa-id-badge"></i> ORCID Profile</a
-        >
+  <body class="font-sans leading-relaxed text-gray-800 bg-gray-50">
+    <header class="bg-academic-blue text-white py-10 text-center shadow-lg">
+      <div class="max-w-6xl mx-auto px-5">
+        <h1 id="header-name" class="text-4xl font-bold mb-2">
+          Professor Portfolio
+        </h1>
+        <p id="header-title" class="text-xl opacity-90">Academic Profile</p>
       </div>
-    </section>
-    <section id="courses">
-      <h2>Recent Courses Instructed</h2>
-      <table id="courses-table">
-        <tr>
-          <th>Course Name</th>
-          <th>Semester/Year</th>
-          <th>Description</th>
-        </tr>
-      </table>
-    </section>
-    <section id="publications">
-      <h2>Recent Publications</h2>
-      <ol id="publications-list"></ol>
-    </section>
-    <section id="community">
-      <h2>Recent Community Activities</h2>
-      <ul id="community-activities-list"></ul>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a id="contact-email" href=""></a></p>
-      <p>Labs: <a id="labs-link" href="">Telulabs</a></p>
-    </section>
-    <footer>
-      <p>&copy; 2023 All rights reserved.</p>
+    </header>
+
+    <nav
+      class="bg-white py-4 text-center shadow-md sticky top-0 z-50 backdrop-blur-sm bg-white/95"
+    >
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-wrap justify-center space-x-2 md:space-x-4">
+          <a
+            href="#profile"
+            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >Profile</a
+          >
+          <a
+            href="#courses"
+            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >Courses</a
+          >
+          <a
+            href="#projects"
+            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >Projects</a
+          >
+          <a
+            href="#publications"
+            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >Publications</a
+          >
+          <a
+            href="#awards"
+            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >Awards</a
+          >
+          <a
+            href="#community"
+            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >Community</a
+          >
+          <a
+            href="#contact"
+            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-5 py-5">
+      <section
+        id="profile"
+        class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
+      >
+        <h2
+          class="text-academic-blue mb-6 text-3xl font-bold border-b-4 border-academic-blue pb-3"
+        >
+          Profile
+        </h2>
+        <div class="flex flex-col md:flex-row gap-8 mb-8 items-start">
+          <div
+            class="w-48 h-48 md:w-52 md:h-52 bg-gray-200 flex items-center justify-center text-gray-600 text-base rounded-xl shadow-sm border border-gray-300 flex-shrink-0 mx-auto md:mx-0"
+          >
+            Your Photo Here
+          </div>
+          <div class="flex-1">
+            <div class="text-center md:text-left">
+              <h3
+                id="profile-name"
+                class="text-academic-blue text-2xl md:text-3xl font-bold mb-3"
+              ></h3>
+              <p
+                id="profile-title"
+                class="text-lg font-semibold text-gray-700 mb-4"
+              ></p>
+            </div>
+            <div class="text-left">
+              <p
+                id="profile-bio"
+                class="mb-4 text-gray-700 leading-relaxed"
+              ></p>
+              <p class="mb-4">
+                <strong class="text-gray-800">Office:</strong>
+                <span id="office-info" class="text-gray-600"></span>
+              </p>
+              <p class="mb-3">
+                <strong class="text-gray-800">Academic Background:</strong>
+              </p>
+              <ul
+                id="academic-background"
+                class="mb-4 text-gray-700 space-y-1"
+              ></ul>
+              <p class="mb-6">
+                <strong class="text-gray-800">Research Interests:</strong>
+                <span id="interests" class="text-gray-600"></span>
+              </p>
+
+              <!-- Research Profile Links -->
+              <div class="mt-6">
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
+                >
+                  <a
+                    id="scopus-link"
+                    target="_blank"
+                    class="flex items-center p-3 bg-white text-academic-blue no-underline rounded-lg border border-gray-300 transition-all duration-300 font-medium hover:bg-academic-blue hover:text-white hover:shadow-md text-sm"
+                  >
+                    <i class="fas fa-search mr-2 text-base"></i> Scopus
+                  </a>
+                  <a
+                    id="google-scholar-link"
+                    target="_blank"
+                    class="flex items-center p-3 bg-white text-academic-blue no-underline rounded-lg border border-gray-300 transition-all duration-300 font-medium hover:bg-academic-blue hover:text-white hover:shadow-md text-sm"
+                  >
+                    <i class="fas fa-graduation-cap mr-2 text-base"></i> Google
+                    Scholar
+                  </a>
+                  <a
+                    id="sinta-link"
+                    target="_blank"
+                    class="flex items-center p-3 bg-white text-academic-blue no-underline rounded-lg border border-gray-300 transition-all duration-300 font-medium hover:bg-academic-blue hover:text-white hover:shadow-md text-sm"
+                  >
+                    <i class="fas fa-university mr-2 text-base"></i> SINTA
+                  </a>
+                  <a
+                    id="orcid-link"
+                    target="_blank"
+                    class="flex items-center p-3 bg-white text-academic-blue no-underline rounded-lg border border-gray-300 transition-all duration-300 font-medium hover:bg-academic-blue hover:text-white hover:shadow-md text-sm"
+                  >
+                    <i class="fas fa-id-badge mr-2 text-base"></i> ORCID
+                  </a>
+                  <a
+                    id="linkedin-link"
+                    target="_blank"
+                    class="flex items-center p-3 bg-white text-academic-blue no-underline rounded-lg border border-gray-300 transition-all duration-300 font-medium hover:bg-academic-blue hover:text-white hover:shadow-md text-sm"
+                  >
+                    <i class="fab fa-linkedin mr-2 text-base"></i> LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="courses"
+        class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
+      >
+        <h2
+          class="text-academic-blue mb-6 text-3xl font-bold border-b-4 border-academic-blue pb-3"
+        >
+          Recent Courses Instructed
+        </h2>
+        <div class="overflow-x-auto">
+          <table
+            id="courses-table"
+            class="w-full mt-5 bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200"
+          >
+            <thead>
+              <tr class="bg-academic-blue text-white">
+                <th class="px-6 py-4 text-left font-semibold">Course Name</th>
+                <th class="px-6 py-4 text-left font-semibold">Semester/Year</th>
+                <th class="px-6 py-4 text-left font-semibold">Description</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
+      >
+        <h2
+          class="text-academic-blue mb-6 text-3xl font-bold border-b-4 border-academic-blue pb-3"
+        >
+          Research Projects
+        </h2>
+        <div id="projects-container"></div>
+      </section>
+
+      <section
+        id="publications"
+        class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
+      >
+        <h2
+          class="text-academic-blue mb-6 text-3xl font-bold border-b-4 border-academic-blue pb-3"
+        >
+          Recent Publications
+        </h2>
+        <ul
+          id="publications-list"
+          class="list-disc list-inside space-y-2 text-gray-700 leading-relaxed"
+        ></ul>
+      </section>
+
+      <section
+        id="awards"
+        class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
+      >
+        <h2
+          class="text-academic-blue mb-6 text-3xl font-bold border-b-4 border-academic-blue pb-3"
+        >
+          Awards & Recognition
+        </h2>
+        <div id="awards-container"></div>
+      </section>
+
+      <section
+        id="community"
+        class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
+      >
+        <h2
+          class="text-academic-blue mb-6 text-3xl font-bold border-b-4 border-academic-blue pb-3"
+        >
+          Recent Community Activities
+        </h2>
+        <ul
+          id="community-activities-list"
+          class="space-y-2 text-gray-700 leading-relaxed"
+        ></ul>
+      </section>
+
+      <section
+        id="contact"
+        class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
+      >
+        <h2
+          class="text-academic-blue mb-6 text-3xl font-bold border-b-4 border-academic-blue pb-3"
+        >
+          Contact
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <i class="fas fa-envelope text-academic-blue mr-3 text-lg"></i>
+            <strong class="text-gray-800">Email:</strong>
+            <a
+              id="contact-email"
+              href=""
+              class="text-academic-blue hover:underline"
+            ></a>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <i class="fas fa-phone text-academic-blue mr-3 text-lg"></i>
+            <strong class="text-gray-800">Phone:</strong>
+            <span id="contact-phone" class="text-gray-700"></span>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <i class="fas fa-clock text-academic-blue mr-3 text-lg"></i>
+            <strong class="text-gray-800">Office Hours:</strong>
+            <span id="office-hours" class="text-gray-700"></span>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <i class="fas fa-flask text-academic-blue mr-3 text-lg"></i>
+            <strong class="text-gray-800">Labs:</strong>
+            <a id="labs-link" href="" class="text-academic-blue hover:underline"
+              >Research Labs</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="bg-academic-blue text-white text-center py-8 mt-10">
+      <p>&copy; 2025 All rights reserved.</p>
     </footer>
     <script>
       fetch("data.json")
         .then((response) => response.json())
         .then((data) => {
+          // Header information
+          document.getElementById("header-name").textContent =
+            data.profile.name;
+          document.getElementById("header-title").textContent =
+            data.profile.title;
+
+          // Profile section
           document.getElementById("profile-name").textContent =
             data.profile.name;
+          document.getElementById("profile-title").textContent =
+            data.profile.title;
+          document.getElementById("profile-bio").textContent = data.profile.bio;
 
           const academicBackgroundList = document.getElementById(
             "academic-background"
           );
           data.profile.academicBackground.forEach((item) => {
             const li = document.createElement("li");
-            li.textContent = item;
+            li.className = "flex";
+            li.innerHTML = `
+              <span class="mr-2 text-gray-500">•</span>
+              <span>${item}</span>
+            `;
             academicBackgroundList.appendChild(li);
           });
 
           const officeInfo = document.getElementById("office-info");
-          officeInfo.textContent = `
-          ${data.profile.office.department}, 
-          ${data.profile.office.faculty}, 
-          ${data.profile.office.university}, 
-          ${data.profile.office.address}
-        `;
+          officeInfo.textContent = `${data.profile.office.department}, ${data.profile.office.faculty}, ${data.profile.office.university}, ${data.profile.office.address}`;
 
           document.getElementById("interests").textContent =
             data.profile.interests;
 
+          // Research profile links
           document.getElementById("scopus-link").href = data.profile.scopus;
           document.getElementById("google-scholar-link").href =
             data.profile.googleScholar;
           document.getElementById("sinta-link").href = data.profile.sinta;
           document.getElementById("orcid-link").href = data.profile.orcid;
+          document.getElementById("linkedin-link").href = data.profile.linkedin;
 
-          const coursesTable = document.getElementById("courses-table");
+          // Projects section
+          const projectsContainer =
+            document.getElementById("projects-container");
+          const projectsList = document.createElement("ul");
+          projectsList.className = "space-y-2 text-gray-700 leading-relaxed";
+
+          data.projects.forEach((project) => {
+            const li = document.createElement("li");
+            li.className = "flex";
+            li.innerHTML = `
+              <span class="mr-2 text-gray-500">•</span>
+              <span><strong class="text-academic-blue">${project.title}</strong> (${project.year}) - ${project.description}</span>
+            `;
+            projectsList.appendChild(li);
+          });
+
+          projectsContainer.appendChild(projectsList);
+
+          // Courses table
+          const coursesTable = document.querySelector("#courses-table tbody");
           data.courses.forEach((course) => {
             const row = document.createElement("tr");
-            row.innerHTML = `<td>${course.name}</td><td>${course.semester}</td><td>${course.description}</td>`;
+            row.className =
+              "hover:bg-blue-50 transition-colors duration-200 even:bg-gray-50";
+            row.innerHTML = `
+              <td class="px-6 py-4 text-gray-800 font-medium">${course.name}</td>
+              <td class="px-6 py-4 text-gray-600">${course.semester}</td>
+              <td class="px-6 py-4 text-gray-600">${course.description}</td>
+            `;
             coursesTable.appendChild(row);
           });
 
+          // Publications list
           const publicationsList = document.getElementById("publications-list");
+          publicationsList.className =
+            "space-y-2 text-gray-700 leading-relaxed";
           data.publications.forEach((pub) => {
             const li = document.createElement("li");
-            li.textContent = pub;
+            li.className = "flex";
+            li.innerHTML = `
+              <span class="mr-2 text-gray-500">•</span>
+              <span>${pub}</span>
+            `;
             publicationsList.appendChild(li);
           });
 
+          // Awards section
+          const awardsContainer = document.getElementById("awards-container");
+          const awardsList = document.createElement("ul");
+          awardsList.className = "space-y-2 text-gray-700 leading-relaxed";
+
+          data.awards.forEach((award) => {
+            const li = document.createElement("li");
+            li.className = "flex";
+            li.innerHTML = `
+              <span class="mr-2 text-gray-500">•</span>
+              <span><strong class="text-yellow-700">${award.title}</strong> - ${award.organization} (${award.year})</span>
+            `;
+            awardsList.appendChild(li);
+          });
+
+          awardsContainer.appendChild(awardsList);
+
+          // Community activities
           const communityActivitiesList = document.getElementById(
             "community-activities-list"
           );
           data.communityActivities.forEach((activity) => {
             const li = document.createElement("li");
-            li.textContent = activity;
+            li.className = "flex";
+            li.innerHTML = `
+              <span class="mr-2 text-gray-500">•</span>
+              <span>${activity}</span>
+            `;
             communityActivitiesList.appendChild(li);
           });
 
+          // Contact information
           const contactEmail = document.getElementById("contact-email");
           contactEmail.href = `mailto:${data.contact.email}`;
           contactEmail.textContent = data.contact.email;
+
+          document.getElementById("contact-phone").textContent =
+            data.contact.phone;
+          document.getElementById("office-hours").textContent =
+            data.contact.office_hours;
 
           const labsLink = document.getElementById("labs-link");
           labsLink.href = data.contact.labs;

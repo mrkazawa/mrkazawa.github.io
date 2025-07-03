@@ -1,45 +1,113 @@
 {
   "profile": {
     "name": "Dr. John Doe",
+    "title": "Associate Professor",
+    "bio": "Dr. John Doe is an Associate Professor specializing in data science, blockchain technology, and information security. He has over 10 years of experience in academia and industry, with a passion for innovative research and quality education.",
     "academicBackground": [
-      "PhD in Statistics, University of Statistics, 2015.",
-      "MSc in Applied Mathematics, University of Mathematics, 2010.",
-      "BSc in Mathematics, University of Science, 2008."
+      "PhD in Computer Science, Massachusetts Institute of Technology, 2015.",
+      "MSc in Applied Mathematics, Stanford University, 2010.",
+      "BSc in Mathematics, University of California Berkeley, 2008."
     ],
     "office": {
-      "department": "Department of Statistics",
-      "faculty": "Faculty of Science",
-      "university": "University of Statistics",
-      "address": "123 University Ave, City, Country"
+      "department": "Department of Computer Science",
+      "faculty": "Faculty of Engineering and Technology",
+      "university": "University of Technology",
+      "address": "Room 315, Building A, 123 University Ave, Tech City, TC 12345"
     },
-    "interests": "Blockchain, Information Security, Enterprise System",
-    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=YOUR_SCOPUS_ID",
-    "googleScholar": "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID",
-    "sinta": "https://sinta.kemdikbud.go.id/authors/profile/YOUR_SINTA_ID",
-    "orcid": "https://orcid.org/YOUR_ORCID_ID"
+    "interests": "Blockchain Technology, Information Security, Enterprise Systems, Data Science, Machine Learning",
+    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=57200000000",
+    "googleScholar": "https://scholar.google.com/citations?user=ABCD1234567",
+    "sinta": "https://sinta.kemdikbud.go.id/authors/profile/6000000",
+    "orcid": "https://orcid.org/0000-0000-0000-0000",
+    "linkedin": "https://www.linkedin.com/in/johndoe-professor"
   },
+  "projects": [
+    {
+      "title": "Blockchain-based Voting System",
+      "description": "Developed a secure and transparent voting system using blockchain technology to ensure election integrity.",
+      "year": "2024",
+      "status": "Completed",
+      "collaborators": "Dr. Jane Smith, Alex Johnson",
+      "funding": "NSF Grant #1234567 - $150,000"
+    },
+    {
+      "title": "AI-Powered Cybersecurity Framework",
+      "description": "Research project focusing on machine learning algorithms for real-time threat detection in enterprise networks.",
+      "year": "2023-2025",
+      "status": "Ongoing",
+      "collaborators": "Dr. Michael Chen, Sarah Williams",
+      "funding": "Industry Partnership - $200,000"
+    },
+    {
+      "title": "Smart Contract Security Analysis Tool",
+      "description": "Development of automated tools for identifying vulnerabilities in smart contracts deployed on Ethereum.",
+      "year": "2023",
+      "status": "Completed",
+      "collaborators": "Research Team Alpha",
+      "funding": "University Research Grant - $75,000"
+    }
+  ],
   "publications": [
-    "J. Smith, \"Advanced Statistical Methods,\" Journal of Statistics, vol. 45, no. 2, pp. 123-145, 2023.",
-    "J. Doe, \"Data Visualization Techniques,\" International Journal of Data Science, vol. 12, no. 4, pp. 89-102, 2022."
+    "J. Doe, A. Smith, \"Blockchain Security in Enterprise Applications,\" IEEE Transactions on Information Forensics and Security, vol. 18, pp. 1234-1245, 2024.",
+    "J. Doe, M. Chen, \"Machine Learning Approaches for Cybersecurity Threat Detection,\" ACM Computing Surveys, vol. 56, no. 3, pp. 1-28, 2024.",
+    "J. Doe, \"Smart Contract Vulnerability Assessment: A Systematic Review,\" Journal of Systems and Software, vol. 198, pp. 111-125, 2023.",
+    "J. Doe, S. Williams, \"Decentralized Identity Management Using Blockchain,\" Computers & Security, vol. 125, pp. 103-115, 2023.",
+    "J. Doe, \"Advanced Statistical Methods for Cybersecurity Data Analysis,\" Journal of Statistics, vol. 45, no. 2, pp. 123-145, 2022."
   ],
   "communityActivities": [
-    "Member of the University Curriculum Committee (2021–Present).",
-    "Volunteer at the Annual Statistics Outreach Program."
+    "Program Committee Member, International Conference on Blockchain Security (2023-Present)",
+    "Reviewer for IEEE Transactions on Information Forensics and Security (2021-Present)",
+    "Member of the University Curriculum Committee (2021–Present)",
+    "Co-organizer of Annual Cybersecurity Workshop (2022-Present)",
+    "Volunteer at the Annual Technology Outreach Program for High Schools"
   ],
   "contact": {
     "email": "john.doe@university.edu",
-    "labs": "https://telulabs.github.io"
+    "phone": "+1 (555) 123-4567",
+    "labs": "https://telulabs.github.io",
+    "office_hours": "Tuesdays and Thursdays, 2:00 PM - 4:00 PM"
   },
   "courses": [
     {
-      "name": "Statistics 101",
-      "semester": "Fall 2022",
-      "description": "Introduction to basic statistics."
+      "name": "CS 401: Blockchain Technology and Applications",
+      "semester": "Fall 2024",
+      "description": "Comprehensive course covering blockchain fundamentals, smart contracts, and real-world applications.",
+      "credits": 3
     },
     {
-      "name": "Data Analysis",
+      "name": "CS 350: Information Security",
+      "semester": "Spring 2024",
+      "description": "Advanced course on cybersecurity principles, threat analysis, and defense mechanisms.",
+      "credits": 3
+    },
+    {
+      "name": "CS 201: Data Structures and Algorithms",
+      "semester": "Fall 2023",
+      "description": "Fundamental course covering essential data structures and algorithm design principles.",
+      "credits": 4
+    },
+    {
+      "name": "CS 480: Special Topics in Cybersecurity",
       "semester": "Spring 2023",
-      "description": "Advanced data analysis techniques."
+      "description": "Graduate-level seminar exploring cutting-edge research in cybersecurity.",
+      "credits": 3
+    }
+  ],
+  "awards": [
+    {
+      "title": "Excellence in Teaching Award",
+      "organization": "University of Technology",
+      "year": "2023"
+    },
+    {
+      "title": "Best Paper Award",
+      "organization": "International Conference on Blockchain Security",
+      "year": "2024"
+    },
+    {
+      "title": "Outstanding Researcher Award",
+      "organization": "Faculty of Engineering and Technology",
+      "year": "2022"
     }
   ]
 }
