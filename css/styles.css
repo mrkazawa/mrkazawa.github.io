@@ -1,0 +1,75 @@
+/**
+ * Academic Portfolio Website Styles
+ * Custom CSS for the professor profile website
+ */
+
+/* ====================
+   Base Styles
+   ==================== */
+
+/* Smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ====================
+   CSS Custom Properties
+   ==================== */
+
+/* Custom academic color variables */
+:root {
+  --academic-blue: #004080;
+  --academic-light: #0066cc;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --background-light: #f9fafb;
+}
+
+/* ====================
+   Utility Classes
+   ==================== */
+
+/* Academic color utilities */
+.text-academic-blue {
+  color: var(--academic-blue);
+}
+
+.bg-academic-blue {
+  background-color: var(--academic-blue);
+}
+
+.border-academic-blue {
+  border-color: var(--academic-blue);
+}
+
+.hover\:bg-academic-blue:hover {
+  background-color: var(--academic-blue);
+}
+
+/* ====================
+   Component Overrides
+   ==================== */
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid var(--academic-blue);
+  outline-offset: 2px;
+}
+
+/* Ensure consistent line heights */
+p,
+li {
+  line-height: 1.6;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+}

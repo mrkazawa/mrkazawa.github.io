@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lecturer Portfolio</title>
+
+    <!-- External Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Tailwind Configuration -->
     <script>
       tailwind.config = {
         theme: {
@@ -20,9 +27,6 @@
           },
         },
       };
-
-      // Add smooth scrolling
-      document.documentElement.style.scrollBehavior = "smooth";
     </script>
   </head>
   <body class="font-sans leading-relaxed text-gray-800 bg-gray-50">
@@ -43,43 +47,52 @@
           <a
             href="#profile"
             class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-            >Profile</a
           >
+            Profile
+          </a>
           <a
             href="#courses"
             class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-            >Courses</a
           >
+            Courses
+          </a>
           <a
             href="#projects"
             class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-            >Projects</a
           >
+            Projects
+          </a>
           <a
             href="#publications"
             class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-            >Publications</a
           >
+            Publications
+          </a>
           <a
             href="#awards"
             class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-            >Awards</a
           >
+            Awards
+          </a>
           <a
             href="#community"
             class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-            >Community</a
           >
+            Community
+          </a>
           <a
             href="#contact"
             class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-            >Contact</a
           >
+            Contact
+          </a>
         </div>
       </div>
     </nav>
 
-    <div class="max-w-6xl mx-auto px-5 py-5">
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-5 py-5">
+      <!-- Profile Section -->
       <section
         id="profile"
         class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
@@ -90,12 +103,20 @@
           Profile
         </h2>
         <div class="flex flex-col md:flex-row gap-8 mb-8 items-start">
-          <div
-            class="w-48 h-48 md:w-52 md:h-52 bg-gray-200 flex items-center justify-center text-gray-600 text-base rounded-xl shadow-sm border border-gray-300 flex-shrink-0 mx-auto md:mx-0"
-          >
-            Your Photo Here
+          <!-- Profile Photo -->
+          <div class="flex-shrink-0 mx-auto md:mx-0">
+            <img
+              id="profile-photo"
+              src="images/profile/profile.jpg"
+              alt="Professor Profile Photo"
+              class="w-48 h-48 md:w-52 md:h-52 rounded-xl shadow-sm border border-gray-300 object-cover"
+              loading="lazy"
+            />
           </div>
+
+          <!-- Profile Information -->
           <div class="flex-1">
+            <!-- Name and Title (Centered) -->
             <div class="text-center md:text-left">
               <h3
                 id="profile-name"
@@ -106,15 +127,19 @@
                 class="text-lg font-semibold text-gray-700 mb-4"
               ></p>
             </div>
+
+            <!-- Detailed Information (Left Aligned) -->
             <div class="text-left">
               <p
                 id="profile-bio"
                 class="mb-4 text-gray-700 leading-relaxed"
               ></p>
+
               <p class="mb-4">
                 <strong class="text-gray-800">Office:</strong>
                 <span id="office-info" class="text-gray-600"></span>
               </p>
+
               <p class="mb-3">
                 <strong class="text-gray-800">Academic Background:</strong>
               </p>
@@ -122,6 +147,7 @@
                 id="academic-background"
                 class="mb-4 text-gray-700 space-y-1"
               ></ul>
+
               <p class="mb-6">
                 <strong class="text-gray-800">Research Interests:</strong>
                 <span id="interests" class="text-gray-600"></span>
@@ -175,6 +201,7 @@
         </div>
       </section>
 
+      <!-- Courses Section -->
       <section
         id="courses"
         class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
@@ -201,6 +228,7 @@
         </div>
       </section>
 
+      <!-- Research Projects Section -->
       <section
         id="projects"
         class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
@@ -213,6 +241,7 @@
         <div id="projects-container"></div>
       </section>
 
+      <!-- Publications Section -->
       <section
         id="publications"
         class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
@@ -228,6 +257,7 @@
         ></ul>
       </section>
 
+      <!-- Awards Section -->
       <section
         id="awards"
         class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
@@ -240,6 +270,7 @@
         <div id="awards-container"></div>
       </section>
 
+      <!-- Community Activities Section -->
       <section
         id="community"
         class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
@@ -255,6 +286,7 @@
         ></ul>
       </section>
 
+      <!-- Contact Section -->
       <section
         id="contact"
         class="bg-white my-5 p-8 md:p-10 rounded-xl shadow-lg"
@@ -272,7 +304,8 @@
               id="contact-email"
               href=""
               class="text-academic-blue hover:underline"
-            ></a>
+            >
+            </a>
           </div>
           <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
             <i class="fas fa-phone text-academic-blue mr-3 text-lg"></i>
@@ -287,166 +320,22 @@
           <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
             <i class="fas fa-flask text-academic-blue mr-3 text-lg"></i>
             <strong class="text-gray-800">Labs:</strong>
-            <a id="labs-link" href="" class="text-academic-blue hover:underline"
-              >Research Labs</a
+            <a
+              id="labs-link"
+              href=""
+              class="text-academic-blue hover:underline"
             >
+              Research Labs
+            </a>
           </div>
         </div>
       </section>
-    </div>
+    </main>
     <footer class="bg-academic-blue text-white text-center py-8 mt-10">
       <p>&copy; 2025 All rights reserved.</p>
     </footer>
-    <script>
-      fetch("data.json")
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then((data) => {
-          // Header information
-          document.getElementById("header-name").textContent =
-            data.profile.name;
-          document.getElementById("header-title").textContent =
-            data.profile.title;
 
-          // Profile section
-          document.getElementById("profile-name").textContent =
-            data.profile.name;
-          document.getElementById("profile-title").textContent =
-            data.profile.title;
-          document.getElementById("profile-bio").textContent = data.profile.bio;
-
-          const academicBackgroundList = document.getElementById(
-            "academic-background"
-          );
-          data.profile.academicBackground.forEach((item) => {
-            const li = document.createElement("li");
-            li.className = "flex";
-            li.innerHTML = `
-              <span class="mr-2 text-gray-500">•</span>
-              <span>${item}</span>
-            `;
-            academicBackgroundList.appendChild(li);
-          });
-
-          const officeInfo = document.getElementById("office-info");
-          officeInfo.textContent = `${data.profile.office.department}, ${data.profile.office.faculty}, ${data.profile.office.university}, ${data.profile.office.address}`;
-
-          document.getElementById("interests").textContent =
-            data.profile.interests;
-
-          // Research profile links
-          document.getElementById("scopus-link").href = data.profile.scopus;
-          document.getElementById("google-scholar-link").href =
-            data.profile.googleScholar;
-          document.getElementById("sinta-link").href = data.profile.sinta;
-          document.getElementById("orcid-link").href = data.profile.orcid;
-          document.getElementById("linkedin-link").href = data.profile.linkedin;
-
-          // Projects section
-          const projectsContainer =
-            document.getElementById("projects-container");
-          const projectsList = document.createElement("ul");
-          projectsList.className = "space-y-2 text-gray-700 leading-relaxed";
-
-          data.projects.forEach((project) => {
-            const li = document.createElement("li");
-            li.className = "flex";
-            li.innerHTML = `
-              <span class="mr-2 text-gray-500">•</span>
-              <span><strong class="text-academic-blue">${project.title}</strong> (${project.year}) - ${project.description}</span>
-            `;
-            projectsList.appendChild(li);
-          });
-
-          projectsContainer.appendChild(projectsList);
-
-          // Courses table
-          const coursesTable = document.querySelector("#courses-table tbody");
-          data.courses.forEach((course) => {
-            const row = document.createElement("tr");
-            row.className =
-              "hover:bg-blue-50 transition-colors duration-200 even:bg-gray-50";
-            row.innerHTML = `
-              <td class="px-6 py-4 text-gray-800 font-medium">${course.name}</td>
-              <td class="px-6 py-4 text-gray-600">${course.semester}</td>
-              <td class="px-6 py-4 text-gray-600">${course.description}</td>
-            `;
-            coursesTable.appendChild(row);
-          });
-
-          // Publications list
-          const publicationsList = document.getElementById("publications-list");
-          publicationsList.className =
-            "space-y-2 text-gray-700 leading-relaxed";
-          data.publications.forEach((pub) => {
-            const li = document.createElement("li");
-            li.className = "flex";
-            li.innerHTML = `
-              <span class="mr-2 text-gray-500">•</span>
-              <span>${pub}</span>
-            `;
-            publicationsList.appendChild(li);
-          });
-
-          // Awards section
-          const awardsContainer = document.getElementById("awards-container");
-          const awardsList = document.createElement("ul");
-          awardsList.className = "space-y-2 text-gray-700 leading-relaxed";
-
-          data.awards.forEach((award) => {
-            const li = document.createElement("li");
-            li.className = "flex";
-            li.innerHTML = `
-              <span class="mr-2 text-gray-500">•</span>
-              <span><strong class="text-yellow-700">${award.title}</strong> - ${award.organization} (${award.year})</span>
-            `;
-            awardsList.appendChild(li);
-          });
-
-          awardsContainer.appendChild(awardsList);
-
-          // Community activities
-          const communityActivitiesList = document.getElementById(
-            "community-activities-list"
-          );
-          data.communityActivities.forEach((activity) => {
-            const li = document.createElement("li");
-            li.className = "flex";
-            li.innerHTML = `
-              <span class="mr-2 text-gray-500">•</span>
-              <span>${activity}</span>
-            `;
-            communityActivitiesList.appendChild(li);
-          });
-
-          // Contact information
-          const contactEmail = document.getElementById("contact-email");
-          contactEmail.href = `mailto:${data.contact.email}`;
-          contactEmail.textContent = data.contact.email;
-
-          document.getElementById("contact-phone").textContent =
-            data.contact.phone;
-          document.getElementById("office-hours").textContent =
-            data.contact.office_hours;
-
-          const labsLink = document.getElementById("labs-link");
-          labsLink.href = data.contact.labs;
-        })
-        .catch((error) => {
-          console.error("Error loading data.json:", error);
-          // Fallback content
-          document.getElementById("header-name").textContent =
-            "Professor Portfolio";
-          document.getElementById("header-title").textContent = "Loading...";
-          document.getElementById("profile-name").textContent =
-            "Loading content...";
-          document.getElementById("profile-title").textContent =
-            "Please check console for errors";
-        });
-    </script>
+    <!-- Portfolio JavaScript -->
+    <script src="js/portfolio.js"></script>
   </body>
 </html>
