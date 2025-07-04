@@ -1,13 +1,14 @@
 /**
  * Academic Portfolio Website JavaScript
  * Handles data loading and DOM manipulation for professor profile website
+ * Optimized for performance and minimalism
  */
 
 "use strict";
 
 /**
  * Main Portfolio Manager Class
- * Handles all data loading and content population
+ * Handles all data loading and content population with performance optimizations
  */
 class PortfolioManager {
   /**
@@ -15,6 +16,9 @@ class PortfolioManager {
    */
   constructor() {
     this.data = null;
+    this.cache = new Map();
+    this.isLoading = false;
+    this.intersectionObserver = null;
   }
 
   /**
@@ -23,20 +27,71 @@ class PortfolioManager {
    */
   async init() {
     try {
+      this.showLoadingState();
       await this.loadData();
       this.populateAllSections();
       this.initializeMobileMenu();
+      this.initLazyLoading();
+      this.hideLoadingState();
     } catch (error) {
       this.handleError(error);
     }
   }
 
   /**
-   * Load data from JSON file
+   * Show loading state for better UX
+   */
+  showLoadingState() {
+    document.body.classList.add("loading");
+  }
+
+  /**
+   * Hide loading state
+   */
+  hideLoadingState() {
+    document.body.classList.remove("loading");
+  }
+
+  /**
+   * Initialize lazy loading for performance
+   */
+  initLazyLoading() {
+    if ("IntersectionObserver" in window) {
+      this.intersectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const section = entry.target;
+              if (section.dataset.lazy && !section.dataset.loaded) {
+                this.loadSection(section);
+                section.dataset.loaded = "true";
+              }
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      // Observe sections that can be lazy loaded
+      document.querySelectorAll("[data-lazy]").forEach((section) => {
+        this.intersectionObserver.observe(section);
+      });
+    }
+  }
+
+  /**
+   * Load data from JSON file with caching
    * @returns {Promise<void>}
    * @throws {Error} When fetch fails or response is not ok
    */
   async loadData() {
+    // Check cache first
+    const cacheKey = "portfolio-data";
+    if (this.cache.has(cacheKey)) {
+      this.data = this.cache.get(cacheKey);
+      return;
+    }
+
     const response = await fetch("data.json");
 
     if (!response.ok) {
@@ -44,42 +99,68 @@ class PortfolioManager {
     }
 
     this.data = await response.json();
+
+    // Validate data structure
+    this.validateData();
+
+    // Cache the data
+    this.cache.set(cacheKey, this.data);
   }
 
   /**
-   * Populate all sections with data
+   * Validate data structure to prevent errors
+   */
+  validateData() {
+    const requiredFields = ["profile", "projects", "publications", "contact"];
+    requiredFields.forEach((field) => {
+      if (!this.data[field]) {
+        throw new Error(`Missing required field: ${field}`);
+      }
+    });
+  }
+
+  /**
+   * Populate all sections with data - optimized loading order
    * @returns {void}
    */
   populateAllSections() {
+    // Load critical content first (above the fold)
     this.populateHeader();
     this.populateProfile();
-    this.populateProjects();
-    this.populateCourses();
-    this.populatePublications();
-    this.populateAwards();
-    this.populateCommunity();
-    this.populateContact();
+
+    // Load secondary content with slight delay for better perceived performance
+    requestAnimationFrame(() => {
+      this.populateProjects();
+      this.populateCourses();
+      this.populateContact();
+
+      // Load non-critical content last
+      setTimeout(() => {
+        this.populatePublications();
+        this.populateAwards();
+        this.populateCommunity();
+      }, 50);
+    });
   }
 
   /**
-   * Populate header section
+   * Populate header section - simplified to show only essential info
    * @returns {void}
    */
   populateHeader() {
-    this.setElementText("header-name", this.data.profile.name);
-    this.setElementText("header-title", this.data.profile.title);
+    const { profile } = this.data;
+    this.setElementText("header-name", profile.name);
+    this.setElementText("header-title", profile.title);
   }
 
   /**
-   * Populate profile section
+   * Populate profile section - removed redundant name/title display
    * @returns {void}
    */
   populateProfile() {
     const { profile } = this.data;
 
-    // Basic info
-    this.setElementText("profile-name", profile.name);
-    this.setElementText("profile-title", profile.title);
+    // Focus on unique content - bio, office, background, interests
     this.setElementText("profile-bio", profile.bio);
     this.setElementText("interests", profile.interests);
 
@@ -92,7 +173,7 @@ class PortfolioManager {
 
     // Research profile links
     this.setElementHref("scopus-link", profile.scopus);
-    this.setElementHref("google-scholar-link", profile.googleScholar);
+    this.setElementHref("google-scholar-link", profile.scholar);
     this.setElementHref("sinta-link", profile.sinta);
     this.setElementHref("orcid-link", profile.orcid);
     this.setElementHref("linkedin-link", profile.linkedin);
@@ -130,7 +211,7 @@ class PortfolioManager {
       // Desktop table row
       const row = document.createElement("tr");
       row.className =
-        "hover:bg-blue-50 transition-colors duration-200 even:bg-gray-50";
+        "hover:bg-gray-50 transition-colors duration-200 even:bg-gray-50";
       row.innerHTML = `
         <td class="px-6 py-4 text-gray-800 font-medium align-top">${course.name}</td>
         <td class="px-6 py-4 text-gray-600 align-top">${course.semester}</td>
@@ -138,10 +219,10 @@ class PortfolioManager {
       `;
       tbody.appendChild(row);
 
-      // Mobile card
-      const card = document.createElement("div");
-      card.className = "bg-gray-50 p-4 rounded-lg border border-gray-200";
-      card.innerHTML = `
+      // Mobile minimal view
+      const mobileItem = document.createElement("div");
+      mobileItem.className = "p-3";
+      mobileItem.innerHTML = `
         <div class="space-y-2">
           <div>
             <strong class="text-gray-800">Course Name:</strong>
@@ -157,7 +238,7 @@ class PortfolioManager {
           </div>
         </div>
       `;
-      mobileContainer.appendChild(card);
+      mobileContainer.appendChild(mobileItem);
     });
   }
 
@@ -360,7 +441,7 @@ class PortfolioManager {
   }
 
   /**
-   * Helper: Set text content of an element
+   * Helper: Set text content of an element - optimized
    * @param {string} id - Element ID
    * @param {string} text - Text content to set
    * @returns {void}
@@ -368,13 +449,13 @@ class PortfolioManager {
   setElementText(id, text) {
     const element = document.getElementById(id);
 
-    if (element) {
+    if (element && element.textContent !== text) {
       element.textContent = text;
     }
   }
 
   /**
-   * Helper: Set href attribute of an element
+   * Helper: Set href attribute of an element - optimized
    * @param {string} id - Element ID
    * @param {string} url - URL to set as href
    * @returns {void}
@@ -382,7 +463,7 @@ class PortfolioManager {
   setElementHref(id, url) {
     const element = document.getElementById(id);
 
-    if (element) {
+    if (element && element.href !== url) {
       element.href = url;
     }
   }
@@ -394,23 +475,60 @@ class PortfolioManager {
   createList() {
     const list = document.createElement("ul");
     list.className =
-      "space-y-2 text-gray-700 leading-relaxed break-words overflow-hidden";
+      "list-minimal space-y-3 text-gray-700 leading-relaxed break-words overflow-hidden";
     return list;
   }
 
   /**
-   * Helper: Create a list item with bullet point
+   * Helper: Create a list item with bullet point - optimized
    * @param {string} content - HTML content for the list item
    * @returns {HTMLLIElement} Created list item element
    */
   createListItem(content) {
     const li = document.createElement("li");
     li.className = "flex items-start";
-    li.innerHTML = `
-      <span class="mr-2 text-gray-500 flex-shrink-0">•</span>
+
+    // Use template for better performance
+    const template = document.createElement("template");
+    template.innerHTML = `
+      <span class="mr-3 text-academic-blue flex-shrink-0 font-bold">•</span>
       <span class="break-words overflow-hidden min-w-0 flex-1">${content}</span>
     `;
+
+    li.appendChild(template.content.cloneNode(true));
     return li;
+  }
+
+  /**
+   * Helper: Create optimized minimal container
+   * @param {string} content - HTML content for the container
+   * @returns {HTMLDivElement} Created container element
+   */
+  createMinimalContainer(content) {
+    const container = document.createElement("div");
+    container.className = "section-minimal";
+    container.innerHTML = content;
+    return container;
+  }
+
+  /**
+   * Load section content (for lazy loading)
+   * @param {HTMLElement} section - Section element to load
+   */
+  loadSection(section) {
+    const sectionId = section.id;
+
+    switch (sectionId) {
+      case "publications":
+        if (!section.hasChildNodes()) this.populatePublications();
+        break;
+      case "awards":
+        if (!section.hasChildNodes()) this.populateAwards();
+        break;
+      case "community":
+        if (!section.hasChildNodes()) this.populateCommunity();
+        break;
+    }
   }
 
   /**
