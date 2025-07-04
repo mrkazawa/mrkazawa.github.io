@@ -120,18 +120,44 @@ class PortfolioManager {
    * @returns {void}
    */
   populateCourses() {
+    // Populate desktop table
     const tbody = document.querySelector("#courses-table tbody");
 
+    // Populate mobile card view
+    const mobileContainer = document.getElementById("courses-mobile");
+
     this.data.courses.forEach((course) => {
+      // Desktop table row
       const row = document.createElement("tr");
       row.className =
         "hover:bg-blue-50 transition-colors duration-200 even:bg-gray-50";
       row.innerHTML = `
-        <td class="px-6 py-4 text-gray-800 font-medium">${course.name}</td>
-        <td class="px-6 py-4 text-gray-600">${course.semester}</td>
-        <td class="px-6 py-4 text-gray-600">${course.description}</td>
+        <td class="px-6 py-4 text-gray-800 font-medium align-top">${course.name}</td>
+        <td class="px-6 py-4 text-gray-600 align-top">${course.semester}</td>
+        <td class="px-6 py-4 text-gray-600 align-top">${course.description}</td>
       `;
       tbody.appendChild(row);
+
+      // Mobile card
+      const card = document.createElement("div");
+      card.className = "bg-gray-50 p-4 rounded-lg border border-gray-200";
+      card.innerHTML = `
+        <div class="space-y-2">
+          <div>
+            <strong class="text-gray-800">Course Name:</strong>
+            <span class="text-gray-700">${course.name}</span>
+          </div>
+          <div>
+            <strong class="text-gray-800">Semester/Year:</strong>
+            <span class="text-gray-700">${course.semester}</span>
+          </div>
+          <div>
+            <strong class="text-gray-800">Description:</strong>
+            <span class="text-gray-700">${course.description}</span>
+          </div>
+        </div>
+      `;
+      mobileContainer.appendChild(card);
     });
   }
 

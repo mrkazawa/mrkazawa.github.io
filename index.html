@@ -294,7 +294,9 @@
         >
           Courses Instructed
         </h2>
-        <div class="overflow-x-auto">
+
+        <!-- Desktop Table View -->
+        <div class="hidden md:block overflow-x-auto">
           <table
             id="courses-table"
             class="w-full mt-5 bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200"
@@ -309,6 +311,9 @@
             <tbody class="divide-y divide-gray-200"></tbody>
           </table>
         </div>
+
+        <!-- Mobile Card View -->
+        <div id="courses-mobile" class="md:hidden space-y-4 mt-5"></div>
       </section>
 
       <!-- Research Projects Section -->
