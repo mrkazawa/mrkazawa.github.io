@@ -31,6 +31,7 @@ class PortfolioManager {
       await this.loadData();
       this.populateAllSections();
       this.initializeMobileMenu();
+      this.initializeScrollNavbar();
       this.initLazyLoading();
       this.hideLoadingState();
     } catch (error) {
@@ -435,6 +436,72 @@ class PortfolioManager {
           mobileMenu.classList.add("hidden");
           const icon = mobileMenuButton.querySelector("i");
           icon.className = "fas fa-bars text-xl";
+        }
+      });
+    }
+  }
+
+  /**
+   * Initialize scroll-based navbar behavior for mobile
+   */
+  initializeScrollNavbar() {
+    const mobileHomeIcon = document.getElementById("mobile-home-icon");
+    const mobileProfileName = document.getElementById("mobile-profile-name");
+    const header = document.querySelector("header");
+
+    if (
+      mobileHomeIcon &&
+      mobileProfileName &&
+      header &&
+      this.data?.profile?.name
+    ) {
+      // Set the profile name
+      mobileProfileName.textContent = this.data.profile.name;
+
+      // Calculate header height to determine when navbar hits top
+      const getHeaderHeight = () => header.offsetHeight;
+
+      let isNavbarStuck = false;
+
+      const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        const headerHeight = getHeaderHeight();
+
+        // Check if navbar has reached the top of the viewport (is stuck)
+        if (currentScrollY >= headerHeight && !isNavbarStuck) {
+          // Switch to profile name when navbar is stuck at top
+          mobileHomeIcon.classList.add("hidden");
+          mobileProfileName.classList.remove("hidden");
+          isNavbarStuck = true;
+        } else if (currentScrollY < headerHeight && isNavbarStuck) {
+          // Switch back to home icon when navbar is not stuck
+          mobileHomeIcon.classList.remove("hidden");
+          mobileProfileName.classList.add("hidden");
+          isNavbarStuck = false;
+        }
+      };
+
+      // Add scroll listener with throttling for performance
+      let ticking = false;
+      window.addEventListener("scroll", () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            handleScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      // Also handle window resize in case header height changes
+      window.addEventListener("resize", () => {
+        // Recalculate on resize with debouncing
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            handleScroll();
+            ticking = false;
+          });
+          ticking = true;
         }
       });
     }

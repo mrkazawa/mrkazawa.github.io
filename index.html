@@ -120,13 +120,17 @@
 
         <!-- Mobile View: Home Icon Left, Hamburger Right -->
         <div class="md:hidden flex justify-between items-center">
-          <!-- Home Icon (Mobile Only) -->
+          <!-- Home Icon/Name (Mobile Only) -->
           <div class="flex-shrink-0">
             <a
               href="#profile"
               class="text-academic-blue hover:text-academic-light transition-colors duration-300"
             >
-              <i class="fas fa-home text-2xl"></i>
+              <i id="mobile-home-icon" class="fas fa-home text-2xl"></i>
+              <span
+                id="mobile-profile-name"
+                class="hidden font-semibold text-lg"
+              ></span>
             </a>
           </div>
 
