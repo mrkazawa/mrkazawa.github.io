@@ -249,3 +249,24 @@ li {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ====================
+   Header Responsive Name Styling
+   ==================== */
+
+/* Ensure header name never wraps and scales responsively */
+#header-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  line-height: 1.2;
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 360px) {
+  #header-name {
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+  }
+}

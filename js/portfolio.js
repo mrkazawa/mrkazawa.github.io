@@ -458,26 +458,26 @@ class PortfolioManager {
       // Set the profile name
       mobileProfileName.textContent = this.data.profile.name;
 
-      // Calculate header height to determine when navbar hits top
+      // Calculate header height to determine when to switch icons
       const getHeaderHeight = () => header.offsetHeight;
 
-      let isNavbarStuck = false;
+      let isProfileNameShown = false;
 
       const handleScroll = () => {
         const currentScrollY = window.scrollY;
         const headerHeight = getHeaderHeight();
 
-        // Check if navbar has reached the top of the viewport (is stuck)
-        if (currentScrollY >= headerHeight && !isNavbarStuck) {
-          // Switch to profile name when navbar is stuck at top
+        // Switch to profile name when scrolled past header
+        if (currentScrollY > headerHeight * 0.5 && !isProfileNameShown) {
+          // Show profile name when scrolled down
           mobileHomeIcon.classList.add("hidden");
           mobileProfileName.classList.remove("hidden");
-          isNavbarStuck = true;
-        } else if (currentScrollY < headerHeight && isNavbarStuck) {
-          // Switch back to home icon when navbar is not stuck
+          isProfileNameShown = true;
+        } else if (currentScrollY <= headerHeight * 0.5 && isProfileNameShown) {
+          // Show home icon when at the top
           mobileHomeIcon.classList.remove("hidden");
           mobileProfileName.classList.add("hidden");
-          isNavbarStuck = false;
+          isProfileNameShown = false;
         }
       };
 
