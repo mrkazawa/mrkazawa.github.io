@@ -44,11 +44,92 @@
     }
   ],
   "publications": [
-    "Y. E. Oktian, K. P. Hilton, and Christian, \"Transforming Digital Identity through Smart Contract as Identity,\" in Proc. 2024 2nd Int. Conf. on Technology Innovation and Its Applications (ICTIIA), Medan, Indonesia, Sep. 2024, pp. 1–6.",
-    "Y. E. Oktian, T.-T.-H. Le, U. Jo, A. M. A. Laksmono, and H. Kim, \"Secure decentralized firmware update delivery service for Internet of Things,\" Internet of Things, vol. 26, p. 101136, Jul. 2024.",
-    "Y. E. Oktian, U. Jo, S. Oh, H. Jeong, J. Kim, T.-T.-H. Le, and H. Kim, \"Patchman: Firmware Update Delivery Service Over the Blockchain for IoT Environment,\" in Proc. Int. Conf. on Information Security Applications, Singapore: Springer Nature, Aug. 2023, pp. 131–142.",
-    "Y. E. Oktian and S.-G. Lee, \"Blockchain-based federated learning system: A survey on design choices,\" Sensors, vol. 23, no. 12, p. 5658, Jun. 2023.",
-    "Y. E. Oktian, T.-T.-H. Le, U. Jo, and H. Kim, \"Blockchain-powered bandwidth trading on SDN-enabled edge network,\" IEEE Access, vol. 10, pp. 114024–114039, Oct. 2022."
+    {
+      "type": "inproceedings",
+      "title": "Transforming Digital Identity through Smart Contract as Identity",
+      "url": "http://dx.doi.org/10.1109/ictiia61827.2024.10761940",
+      "DOI": "10.1109/ictiia61827.2024.10761940",
+      "booktitle": "2024 2nd International Conference on Technology Innovation and Its Applications (ICTIIA)",
+      "publisher": "IEEE",
+      "authors": ["Yustus Eko Oktian", "Kei Patrick Hilton", "Christian"],
+      "year": 2024,
+      "month": "sep",
+      "pages": "1–6"
+    },
+    {
+      "type": "article",
+      "title": "Secure decentralized firmware update delivery service for Internet of Things",
+      "volume": "26",
+      "ISSN": "2542-6605",
+      "url": "http://dx.doi.org/10.1016/j.iot.2024.101136",
+      "DOI": "10.1016/j.iot.2024.101136",
+      "journal": "Internet of Things",
+      "publisher": "Elsevier BV",
+      "authors": [
+        "Yustus Eko Oktian",
+        "Thi-Thu-Huong Le",
+        "Uk Jo",
+        "Agus Mahardika Ari Laksmono",
+        "Howon Kim"
+      ],
+      "year": 2024,
+      "month": "jul",
+      "pages": "101136"
+    },
+    {
+      "type": "inbook",
+      "title": "Patchman: Firmware Update Delivery Service Over the Blockchain for IoT Environment",
+      "ISBN": "9789819980246",
+      "ISSN": "1611-3349",
+      "url": "http://dx.doi.org/10.1007/978-981-99-8024-6_11",
+      "DOI": "10.1007/978-981-99-8024-6_11",
+      "booktitle": "Information Security Applications",
+      "publisher": "Springer Nature Singapore",
+      "authors": [
+        "Yustus Eko Oktian",
+        "Uk Jo",
+        "Simon Oh",
+        "Hanho Jeong",
+        "Jaehyun Kim",
+        "Thi-Thu-Huong Le",
+        "Howon Kim"
+      ],
+      "year": 2024,
+      "pages": "131–142"
+    },
+    {
+      "type": "article",
+      "title": "Blockchain-Based Federated Learning System: A Survey on Design Choices",
+      "volume": "23",
+      "ISSN": "1424-8220",
+      "url": "http://dx.doi.org/10.3390/s23125658",
+      "DOI": "10.3390/s23125658",
+      "number": "12",
+      "journal": "Sensors",
+      "publisher": "MDPI AG",
+      "authors": ["Yustus Eko Oktian", "Sang-Gon Lee"],
+      "year": 2023,
+      "month": "jun",
+      "pages": "5658"
+    },
+    {
+      "type": "article",
+      "title": "Blockchain-Powered Bandwidth Trading on SDN-Enabled Edge Network",
+      "volume": "10",
+      "ISSN": "2169-3536",
+      "url": "http://dx.doi.org/10.1109/access.2022.3217534",
+      "DOI": "10.1109/access.2022.3217534",
+      "journal": "IEEE Access",
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "authors": [
+        "Yustus Eko Oktian",
+        "Thi-Thu-Huong Le",
+        "Uk Jo",
+        "Howon Kim"
+      ],
+      "year": 2022,
+      "pages": "114024–114039"
+    }
   ],
   "communityActivities": [
     {

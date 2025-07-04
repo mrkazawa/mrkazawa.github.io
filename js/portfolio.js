@@ -139,12 +139,103 @@ class PortfolioManager {
    * @returns {void}
    */
   populatePublications() {
-    const list = document.getElementById("publications-list");
-    list.className = "space-y-2 text-gray-700 leading-relaxed";
+    const container = document.getElementById("publications-container");
+    const list = this.createList();
 
     this.data.publications.forEach((pub) => {
-      list.appendChild(this.createListItem(pub));
+      const citation = this.formatIEEECitation(pub);
+      list.appendChild(this.createListItem(citation));
     });
+
+    container.appendChild(list);
+  }
+
+  /**
+   * Format publication in IEEE citation style
+   * @param {Object} pub - Publication object
+   * @returns {string} - Formatted IEEE citation
+   */
+  formatIEEECitation(pub) {
+    let citation = "";
+
+    // Authors
+    if (pub.authors && pub.authors.length > 0) {
+      citation += pub.authors.join(", ") + ", ";
+    }
+
+    // Title (bold, gold/brown color, not clickable)
+    citation += `"<span class="text-yellow-700 font-bold">${pub.title}</span>," `;
+
+    // Format based on publication type
+    if (pub.type === "article") {
+      // Journal article
+      if (pub.journal) {
+        citation += `<em>${pub.journal}</em>`;
+      }
+      if (pub.volume) {
+        citation += `, vol. ${pub.volume}`;
+      }
+      if (pub.number) {
+        citation += `, no. ${pub.number}`;
+      }
+      if (pub.pages) {
+        citation += `, pp. ${pub.pages}`;
+      }
+      if (pub.month && pub.year) {
+        const monthNames = {
+          jan: "Jan.",
+          feb: "Feb.",
+          mar: "Mar.",
+          apr: "Apr.",
+          may: "May",
+          jun: "Jun.",
+          jul: "Jul.",
+          aug: "Aug.",
+          sep: "Sep.",
+          oct: "Oct.",
+          nov: "Nov.",
+          dec: "Dec.",
+        };
+        citation += `, ${monthNames[pub.month.toLowerCase()] || pub.month} ${
+          pub.year
+        }`;
+      } else if (pub.year) {
+        citation += `, ${pub.year}`;
+      }
+    } else if (pub.type === "inproceedings") {
+      // Conference paper
+      if (pub.booktitle) {
+        citation += `in <em>${pub.booktitle}</em>`;
+      }
+      if (pub.year) {
+        citation += `, ${pub.year}`;
+      }
+      if (pub.pages) {
+        citation += `, pp. ${pub.pages}`;
+      }
+    } else if (pub.type === "inbook") {
+      // Book chapter
+      if (pub.booktitle) {
+        citation += `in <em>${pub.booktitle}</em>`;
+      }
+      if (pub.publisher) {
+        citation += `, ${pub.publisher}`;
+      }
+      if (pub.year) {
+        citation += `, ${pub.year}`;
+      }
+      if (pub.pages) {
+        citation += `, pp. ${pub.pages}`;
+      }
+    }
+
+    // Add DOI if available
+    if (pub.DOI) {
+      citation += `, doi: <a href="${pub.url}" target="_blank" class="text-blue-600 hover:underline">${pub.DOI}</a>`;
+    }
+
+    citation += ".";
+    return citation;
   }
 
   /**
