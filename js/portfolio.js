@@ -108,7 +108,7 @@ class PortfolioManager {
     const list = this.createList();
 
     this.data.projects.forEach((project) => {
-      const content = `<strong class="text-academic-blue">${project.title}</strong> (${project.year}) - ${project.description}`;
+      const content = `<strong class="text-yellow-700">${project.title}</strong> (${project.year})<br>${project.description}`;
       list.appendChild(this.createListItem(content));
     });
 
