@@ -96,6 +96,7 @@ class PortfolioManager {
     this.setElementHref("sinta-link", profile.sinta);
     this.setElementHref("orcid-link", profile.orcid);
     this.setElementHref("linkedin-link", profile.linkedin);
+    this.setElementHref("github-link", profile.github);
   }
 
   /**
