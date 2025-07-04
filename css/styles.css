@@ -79,6 +79,17 @@ html {
    Component Styles
    ==================== */
 
+/* Fix for sticky navbar scroll offset */
+section[id] {
+  scroll-margin-top: 2.75rem; /* Adjust this value based on navbar height */
+}
+
+/* Enhanced smooth scrolling with proper offset */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2.75rem;
+}
+
 /* Profile image alignment with first line of text */
 .profile-image-align {
   margin-top: 0.125rem; /* Fine-tune alignment with text baseline */
