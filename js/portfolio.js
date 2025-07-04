@@ -25,6 +25,7 @@ class PortfolioManager {
     try {
       await this.loadData();
       this.populateAllSections();
+      this.initializeMobileMenu();
     } catch (error) {
       this.handleError(error);
     }
@@ -190,6 +191,53 @@ class PortfolioManager {
     this.setElementText("contact-phone", contact.phone);
     this.setElementText("office-hours", contact.office_hours);
     this.setElementText("labs-link", contact.labs);
+  }
+
+  /**
+   * Initialize mobile menu functionality
+   * @returns {void}
+   */
+  initializeMobileMenu() {
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
+
+    if (mobileMenuButton && mobileMenu) {
+      // Toggle mobile menu when button is clicked
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+
+        // Toggle hamburger/X icon
+        const icon = mobileMenuButton.querySelector("i");
+        if (mobileMenu.classList.contains("hidden")) {
+          icon.className = "fas fa-bars text-xl";
+        } else {
+          icon.className = "fas fa-times text-xl";
+        }
+      });
+
+      // Close mobile menu when a link is clicked
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          const icon = mobileMenuButton.querySelector("i");
+          icon.className = "fas fa-bars text-xl";
+        });
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (event) => {
+        const isClickInsideNav =
+          mobileMenuButton.contains(event.target) ||
+          mobileMenu.contains(event.target);
+
+        if (!isClickInsideNav && !mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.add("hidden");
+          const icon = mobileMenuButton.querySelector("i");
+          icon.className = "fas fa-bars text-xl";
+        }
+      });
+    }
   }
 
   /**

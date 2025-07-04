@@ -40,52 +40,128 @@
     </header>
 
     <nav
-      class="bg-white py-4 text-center shadow-md sticky top-0 z-50 backdrop-blur-sm bg-white/95"
+      class="bg-white py-4 shadow-md sticky top-0 z-50 backdrop-blur-sm bg-white/95"
     >
       <div class="max-w-6xl mx-auto px-4">
-        <div class="flex flex-wrap justify-center space-x-2 md:space-x-4">
-          <a
-            href="#profile"
-            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-          >
-            Profile
-          </a>
-          <a
-            href="#courses"
-            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-          >
-            Courses
-          </a>
-          <a
-            href="#projects"
-            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-          >
-            Projects
-          </a>
-          <a
-            href="#publications"
-            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-          >
-            Publications
-          </a>
-          <a
-            href="#awards"
-            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-          >
-            Awards
-          </a>
-          <a
-            href="#community"
-            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-          >
-            Community
-          </a>
-          <a
-            href="#contact"
-            class="mx-1 md:mx-2 text-academic-blue font-medium py-2 px-3 md:px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
-          >
-            Contact
-          </a>
+        <!-- Desktop View: Centered Menu -->
+        <div class="hidden md:flex justify-center">
+          <div class="flex space-x-4">
+            <a
+              href="#profile"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >
+              Profile
+            </a>
+            <a
+              href="#courses"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >
+              Courses
+            </a>
+            <a
+              href="#projects"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >
+              Projects
+            </a>
+            <a
+              href="#publications"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >
+              Publications
+            </a>
+            <a
+              href="#awards"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >
+              Awards
+            </a>
+            <a
+              href="#community"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >
+              Community
+            </a>
+            <a
+              href="#contact"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile View: Home Icon Left, Hamburger Right -->
+        <div class="md:hidden flex justify-between items-center">
+          <!-- Home Icon (Mobile Only) -->
+          <div class="flex-shrink-0">
+            <a
+              href="#profile"
+              class="text-academic-blue hover:text-academic-light transition-colors duration-300"
+            >
+              <i class="fas fa-home text-2xl"></i>
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div>
+            <button
+              id="mobile-menu-button"
+              class="text-academic-blue p-2 rounded-lg hover:bg-gray-100 transition-all duration-300"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="mobile-menu"
+          class="md:hidden hidden mt-4 pb-4 border-t border-gray-200"
+        >
+          <div class="flex flex-col space-y-2 pt-4">
+            <a
+              href="#profile"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300 mobile-menu-link"
+            >
+              Profile
+            </a>
+            <a
+              href="#courses"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300 mobile-menu-link"
+            >
+              Courses
+            </a>
+            <a
+              href="#projects"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300 mobile-menu-link"
+            >
+              Projects
+            </a>
+            <a
+              href="#publications"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300 mobile-menu-link"
+            >
+              Publications
+            </a>
+            <a
+              href="#awards"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300 mobile-menu-link"
+            >
+              Awards
+            </a>
+            <a
+              href="#community"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300 mobile-menu-link"
+            >
+              Community
+            </a>
+            <a
+              href="#contact"
+              class="text-academic-blue font-medium py-2 px-4 rounded-lg hover:bg-academic-blue hover:text-white transition-all duration-300 mobile-menu-link"
+            >
+              Contact
+            </a>
+          </div>
         </div>
       </div>
     </nav>
