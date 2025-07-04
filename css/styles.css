@@ -63,6 +63,14 @@ li {
   line-height: 1.6;
 }
 
+/* Force word breaking for very long content */
+#publications-container a,
+#publications-container span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
 /* Print styles */
 @media print {
   .no-print {

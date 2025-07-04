@@ -258,7 +258,7 @@ class PortfolioManager {
 
     // Add DOI if available
     if (pub.DOI) {
-      citation += `, doi: <a href="${pub.url}" target="_blank" class="text-blue-600 hover:underline">${pub.DOI}</a>`;
+      citation += `, doi: <a href="${pub.url}" target="_blank" class="text-blue-600 hover:underline break-all">${pub.DOI}</a>`;
     }
 
     citation += ".";
@@ -393,7 +393,8 @@ class PortfolioManager {
    */
   createList() {
     const list = document.createElement("ul");
-    list.className = "space-y-2 text-gray-700 leading-relaxed";
+    list.className =
+      "space-y-2 text-gray-700 leading-relaxed break-words overflow-hidden";
     return list;
   }
 
@@ -404,10 +405,10 @@ class PortfolioManager {
    */
   createListItem(content) {
     const li = document.createElement("li");
-    li.className = "flex";
+    li.className = "flex items-start";
     li.innerHTML = `
-      <span class="mr-2 text-gray-500">•</span>
-      <span>${content}</span>
+      <span class="mr-2 text-gray-500 flex-shrink-0">•</span>
+      <span class="break-words overflow-hidden min-w-0 flex-1">${content}</span>
     `;
     return li;
   }
