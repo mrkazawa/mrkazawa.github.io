@@ -189,7 +189,7 @@ class PortfolioManager {
     // Other contact info
     this.setElementText("contact-phone", contact.phone);
     this.setElementText("office-hours", contact.office_hours);
-    this.setElementHref("labs-link", contact.labs);
+    this.setElementText("labs-link", contact.labs);
   }
 
   /**
