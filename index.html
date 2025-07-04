@@ -195,7 +195,7 @@
       <!-- Profile Section - Simplified to remove redundancy -->
       <section
         id="profile"
-        class="my-8 section-spacing section-divider"
+        class="mt-4 mb-8 section-spacing section-divider"
         role="region"
         aria-labelledby="profile-heading"
       >
@@ -205,9 +205,9 @@
         >
           Profile
         </h2>
-        <div class="flex flex-col md:flex-row gap-8 mb-8 items-start">
+        <div class="flex flex-col md:flex-row gap-8 mb-8">
           <!-- Profile Photo -->
-          <div class="flex-shrink-0 mx-auto md:mx-0">
+          <div class="flex-shrink-0 mx-auto md:mx-0 profile-image-align">
             <img
               id="profile-photo"
               src="images/profile/profile.jpg"
@@ -342,7 +342,7 @@
 
         <!-- Desktop Table View -->
         <div class="hidden md:block overflow-x-auto">
-          <table id="courses-table" class="w-full mt-5 border-collapse">
+          <table id="courses-table" class="w-full border-collapse">
             <thead>
               <tr class="bg-academic-blue text-white">
                 <th class="px-6 py-4 text-left font-semibold">Course Name</th>
@@ -355,7 +355,7 @@
         </div>
 
         <!-- Mobile Card View -->
-        <div id="courses-mobile" class="md:hidden space-y-4 mt-5"></div>
+        <div id="courses-mobile" class="md:hidden space-y-4"></div>
       </section>
 
       <!-- Research Projects Section -->
@@ -371,7 +371,7 @@
         >
           Research Projects
         </h2>
-        <div id="projects-container"></div>
+        <div id="projects-container" class="mt-5"></div>
       </section>
 
       <!-- Publications Section -->
@@ -390,7 +390,7 @@
         </h2>
         <div
           id="publications-container"
-          class="break-words overflow-hidden"
+          class="break-words overflow-hidden mt-5"
         ></div>
       </section>
 
@@ -408,7 +408,7 @@
         >
           Awards & Recognition
         </h2>
-        <div id="awards-container"></div>
+        <div id="awards-container" class="mt-5"></div>
       </section>
 
       <!-- Community Activities Section -->
@@ -427,7 +427,7 @@
         </h2>
         <ul
           id="community-activities-list"
-          class="list-minimal space-y-3 text-gray-700 leading-relaxed"
+          class="list-minimal space-y-3 text-gray-700 leading-relaxed mt-5"
         ></ul>
       </section>
 
@@ -444,8 +444,8 @@
         >
           Contact
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-          <div class="p-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+          <div class="p-2">
             <div class="flex items-start">
               <i
                 class="fas fa-envelope text-academic-blue mr-3 text-lg flex-shrink-0"
@@ -461,7 +461,7 @@
               </div>
             </div>
           </div>
-          <div class="p-3">
+          <div class="p-2">
             <div class="flex items-start">
               <i
                 class="fas fa-phone text-academic-blue mr-3 text-lg flex-shrink-0"
@@ -475,7 +475,7 @@
               </div>
             </div>
           </div>
-          <div class="p-3">
+          <div class="p-2">
             <div class="flex items-start">
               <i
                 class="fas fa-clock text-academic-blue mr-3 text-lg flex-shrink-0"
@@ -489,7 +489,7 @@
               </div>
             </div>
           </div>
-          <div class="p-3">
+          <div class="p-2">
             <div class="flex items-start">
               <i
                 class="fas fa-flask text-academic-blue mr-3 text-lg flex-shrink-0"
@@ -506,7 +506,7 @@
         </div>
       </section>
     </main>
-    <footer class="bg-academic-blue text-white text-center py-8 mt-10">
+    <footer class="bg-academic-blue text-white text-center py-8">
       <p>&copy; 2025 All rights reserved.</p>
     </footer>
 

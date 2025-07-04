@@ -79,6 +79,17 @@ html {
    Component Styles
    ==================== */
 
+/* Profile image alignment with first line of text */
+.profile-image-align {
+  margin-top: 0.125rem; /* Fine-tune alignment with text baseline */
+}
+
+@media (max-width: 768px) {
+  .profile-image-align {
+    margin-top: 0; /* Reset on mobile for centered layout */
+  }
+}
+
 /* Custom responsive grid for research profile links */
 .research-links-grid {
   display: grid;
