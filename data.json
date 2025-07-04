@@ -51,10 +51,26 @@
     "Y. E. Oktian, T.-T.-H. Le, U. Jo, and H. Kim, \"Blockchain-powered bandwidth trading on SDN-enabled edge network,\" IEEE Access, vol. 10, pp. 114024–114039, Oct. 2022."
   ],
   "communityActivities": [
-    "Google Bebras Computational Thinking Training For K-12 Teachers Batch 7 (2025)",
-    "Google Bebras Computational Thinking Training For K-12 Teachers Batch 6 (2023)",
-    "Reviewer for IEEE Access (2021)",
-    "Reviewer for SN Applied Sciences (2021)"
+    {
+      "title": "Google Bebras Computational Thinking Training For K-12 Teachers Batch 7",
+      "year": "2025"
+    },
+    {
+      "title": "Google Bebras Computational Thinking Training For K-12 Teachers Batch 6",
+      "year": "2023"
+    },
+    {
+      "title": "Reviewer for IEEE Access",
+      "year": "2021"
+    },
+    {
+      "title": "Reviewer for SN Applied Sciences",
+      "year": "2021"
+    },
+    {
+      "title": "Reviewer for MDPI Journals",
+      "year": "2020-2022"
+    }
   ],
   "contact": {
     "email": "yustus.oktian@ciputra.ac.id",

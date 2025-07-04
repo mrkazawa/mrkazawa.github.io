@@ -171,7 +171,8 @@ class PortfolioManager {
     const list = document.getElementById("community-activities-list");
 
     this.data.communityActivities.forEach((activity) => {
-      list.appendChild(this.createListItem(activity));
+      const content = `${activity.title} (${activity.year})`;
+      list.appendChild(this.createListItem(content));
     });
   }
 
