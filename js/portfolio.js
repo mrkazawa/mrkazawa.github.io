@@ -166,7 +166,7 @@ class PortfolioManager {
     this.setElementText("interests", profile.interests);
 
     // Office info
-    const officeText = `${profile.office.department}, ${profile.office.faculty}, ${profile.office.university}, ${profile.office.address}`;
+    const officeText = `${profile.office.faculty}, ${profile.office.department}, ${profile.office.university}, ${profile.office.address}`;
     this.setElementText("office-info", officeText);
 
     // Academic background
