@@ -195,10 +195,9 @@ class PortfolioManager {
     container.innerHTML = ""; // Clear existing content
 
     this.data.projects.forEach((project) => {
-      // Create project card with image
+      // Create project container without card styling
       const projectCard = document.createElement("div");
-      projectCard.className =
-        "mb-8 p-6 bg-white border border-gray-200 rounded-lg shadow-sm";
+      projectCard.className = "mb-8";
 
       // Create project content with image
       const projectContent = document.createElement("div");
