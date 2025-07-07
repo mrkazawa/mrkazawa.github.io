@@ -161,6 +161,11 @@ class PortfolioManager {
   populateProfile() {
     const { profile } = this.data;
 
+    // Set profile image dynamically from data.json
+    if (profile.imageUrl) {
+      this.setElementAttribute("profile-photo", "src", profile.imageUrl);
+    }
+
     // Focus on unique content - bio, office, background, interests
     this.setElementText("profile-bio", profile.bio);
     this.setElementText("interests", profile.interests);
@@ -187,14 +192,81 @@ class PortfolioManager {
    */
   populateProjects() {
     const container = document.getElementById("projects-container");
-    const list = this.createList();
+    container.innerHTML = ""; // Clear existing content
 
     this.data.projects.forEach((project) => {
-      const content = `<strong class="text-yellow-700">${project.title}</strong> (${project.year})<br>${project.description}`;
-      list.appendChild(this.createListItem(content));
-    });
+      // Create project card with image
+      const projectCard = document.createElement("div");
+      projectCard.className =
+        "mb-8 p-6 bg-white border border-gray-200 rounded-lg shadow-sm";
 
-    container.appendChild(list);
+      // Create project content with image
+      const projectContent = document.createElement("div");
+      projectContent.className = "flex flex-col md:flex-row gap-6";
+
+      // Add project image if available
+      if (project.imageUrl) {
+        const imageContainer = document.createElement("div");
+        imageContainer.className =
+          "project-image-container w-full md:w-48 md:flex-shrink-0 md:mx-0";
+
+        const imageLink = document.createElement("a");
+        imageLink.href = project.imageUrl;
+        imageLink.target = "_blank";
+        imageLink.rel = "noopener noreferrer";
+        imageLink.className =
+          "block relative overflow-hidden rounded-lg group hover:shadow-lg transition-all duration-300 transform hover:scale-105";
+
+        const img = document.createElement("img");
+        img.src = project.imageUrl;
+        img.alt = `${project.title} project image`;
+        img.className =
+          "w-full h-48 md:h-32 object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110";
+        img.loading = "lazy";
+
+        // Add hover overlay
+        const overlay = document.createElement("div");
+        overlay.className =
+          "absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center";
+
+        const overlayIcon = document.createElement("div");
+        overlayIcon.className =
+          "text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300";
+        overlayIcon.innerHTML = "🔍";
+        overlayIcon.style.fontSize = "24px";
+
+        overlay.appendChild(overlayIcon);
+
+        imageLink.appendChild(img);
+        imageLink.appendChild(overlay);
+        imageContainer.appendChild(imageLink);
+        projectContent.appendChild(imageContainer);
+      }
+
+      // Add project details
+      const detailsContainer = document.createElement("div");
+      detailsContainer.className = "flex-1";
+
+      const title = document.createElement("h3");
+      title.className = "text-xl font-bold text-yellow-700 mb-2";
+      title.textContent = project.title;
+
+      const year = document.createElement("span");
+      year.className = "text-gray-600 text-sm font-medium mb-3 block";
+      year.textContent = `(${project.year})`;
+
+      const description = document.createElement("p");
+      description.className = "text-gray-700 leading-relaxed";
+      description.textContent = project.description;
+
+      detailsContainer.appendChild(title);
+      detailsContainer.appendChild(year);
+      detailsContainer.appendChild(description);
+
+      projectContent.appendChild(detailsContainer);
+      projectCard.appendChild(projectContent);
+      container.appendChild(projectCard);
+    });
   }
 
   /**
@@ -532,6 +604,21 @@ class PortfolioManager {
 
     if (element && element.href !== url) {
       element.href = url;
+    }
+  }
+
+  /**
+   * Helper: Set any attribute of an element - optimized
+   * @param {string} id - Element ID
+   * @param {string} attribute - Attribute name to set
+   * @param {string} value - Value to set for the attribute
+   * @returns {void}
+   */
+  setElementAttribute(id, attribute, value) {
+    const element = document.getElementById(id);
+
+    if (element && element.getAttribute(attribute) !== value) {
+      element.setAttribute(attribute, value);
     }
   }
 

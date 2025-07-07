@@ -28,25 +28,25 @@
       "title": "E-Governance Blockchain System",
       "description": "This research examines the inefficiencies in governmental systems caused by fragmented data and manual processes. It proposes the use of smart contracts as a unified, automated, and transparent mechanism for executing public sector functions. By embedding rules and workflows into code, smart contracts enable secure, verifiable, and auditable operations—offering a scalable solution for streamlining governance and enhancing accountability.",
       "year": "2024-Now",
-      "imageUrl": "images/projects/e-governance-blockchain-system.jpg"
+      "imageUrl": "images/projects/E-Governance Blockchain System.png"
     },
     {
       "title": "IoT Blockchain Security Framework",
       "description": "This research addresses the security vulnerabilities of Internet of Things (IoT) ecosystems by proposing blockchain-based solutions that align with the inherently decentralized nature of IoT networks. By leveraging decentralized ledger technologies, the study enhances trust, transparency, and resilience across IoT systems. It presents a comprehensive framework covering device authentication and authorization, secure software updates, data integrity assurance, and efficient data management. The research also evaluates and designs blockchain architectures optimized for IoT, aiming to ensure secure and scalable operations in distributed environments.",
       "year": "2020-Now",
-      "imageUrl": "images/projects/iot-blockchain-security-framework.jpg"
+      "imageUrl": "images/projects/IoT Blockchain Security Framework.png"
     },
     {
       "title": "Secure and Fair AI Platform",
       "description": "This research aims to develop a secure and equitable Artificial Intelligence (AI) environment by addressing the limitations of traditional centralized AI architectures, where user data privacy is often compromised. By integrating Federated Learning and blockchain technology, the study proposes a decentralized AI framework that enhances data security, ensures user autonomy, and promotes fairness in model training and deployment. This approach enables collaborative model development without exposing raw user data, while leveraging blockchain to ensure transparency, auditability, and trust in the system.",
       "year": "2020-Now",
-      "imageUrl": "images/projects/secure-and-fair-ai-platform.jpg"
+      "imageUrl": "images/projects/Secure And Fair AI Platform.png"
     },
     {
       "title": "Secure Software Define Network",
       "description": "This research focuses on the design and implementation of a secure Software-Defined Networking (SDN) framework aimed at enhancing network security within enterprise environments. The project spans multiple key areas, including the development of SDN security applications, the design of robust security protocols for both East-West and Northbound interfaces, and the creation of secure bandwidth trading and real-time pricing management applications. The framework is designed to address dynamic security challenges and promote adaptive, policy-driven control across network layers.",
       "year": "2014-2022",
-      "imageUrl": "images/projects/secure-software-define-network.jpg"
+      "imageUrl": "images/projects/Secure Software Defined Network Research Project.png"
     }
   ],
   "publications": [

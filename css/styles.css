@@ -281,3 +281,23 @@ li {
     font-size: clamp(1.25rem, 6vw, 1.75rem);
   }
 }
+
+/* ====================
+   Project Images Responsive Styles
+   ==================== */
+
+/* On mobile and when layout becomes single column */
+@media (max-width: 768px) {
+  .project-image-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  .project-image-container img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+}
